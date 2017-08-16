@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8AFD461-3F23-4ABE-A32B-12729306A136}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ORM.AppPdv2</RootNamespace>
+    <AssemblyName>ORM.AppPdv2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AtivacaoBLL.cs" />
+    <Compile Include="BLL\categoriasBLL.cs" />
+    <Compile Include="BLL\clienteBLL.cs" />
+    <Compile Include="BLL\componenteProdBLL.cs" />
+    <Compile Include="BLL\componenteVendaBLL.cs" />
+    <Compile Include="BLL\FluxoCaixaBLL.cs" />
+    <Compile Include="BLL\fornecedorBLL.cs" />
+    <Compile Include="BLL\pagamentoBLL.cs" />
+    <Compile Include="BLL\ParametrosBLL.cs" />
+    <Compile Include="BLL\produtosBLL.cs" />
+    <Compile Include="BLL\SerialBLL.cs" />
+    <Compile Include="BLL\usuarioBLL.cs" />
+    <Compile Include="BLL\vendaBLL.cs" />
+    <Compile Include="DAL\AtivacaoDAL.cs" />
+    <Compile Include="DAL\categoriasDAL.cs" />
+    <Compile Include="DAL\clienteDAL.cs" />
+    <Compile Include="DAL\componenteProdDAL.cs" />
+    <Compile Include="DAL\componenteVendaDAL.cs" />
+    <Compile Include="DAL\FluxoCaixaDAL.cs" />
+    <Compile Include="DAL\fornecedorDAL.cs" />
+    <Compile Include="DAL\pagamentoDAL.cs" />
+    <Compile Include="DAL\parametrosDAL.cs" />
+    <Compile Include="DAL\produtosDAL.cs" />
+    <Compile Include="DAL\SerialDAL.cs" />
+    <Compile Include="DAL\usuarioDAL.cs" />
+    <Compile Include="DAL\vendaDAL.cs" />
+    <Compile Include="INFO\AtivacaoINFO.cs" />
+    <Compile Include="INFO\categoriasINFO.cs" />
+    <Compile Include="INFO\clienteINFO.cs" />
+    <Compile Include="INFO\componenteProdINFO.cs" />
+    <Compile Include="INFO\componenteVendaINFO.cs" />
+    <Compile Include="INFO\FluxoCaixaINFO.cs" />
+    <Compile Include="INFO\fornecedorINFO.cs" />
+    <Compile Include="INFO\pagamentoINFO.cs" />
+    <Compile Include="INFO\parametrosINFO.cs" />
+    <Compile Include="INFO\produtosINFO.cs" />
+    <Compile Include="INFO\SerialINFO.cs" />
+    <Compile Include="INFO\usuarioINFO.cs" />
+    <Compile Include="INFO\vendaINFO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers.AppPdv2\Helpers.AppPdv2.csproj">
+      <Project>{32174b53-9dda-433b-bc1e-f5f609ce8ca4}</Project>
+      <Name>Helpers.AppPdv2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
